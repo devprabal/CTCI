@@ -1,16 +1,8 @@
 #include <iostream>
+#include "printMatrix.h"
+#include "createSqrMatrix.h"
 using namespace std;
-// TODO: is this correct method for nxn matrix to be passed or not?
-void printMatrix(int **mat, int rows, int cols) {
-  for (int i = 0; i < rows; i++) {
-    for (int j = 0; j < cols; j++)
-      cout << mat[i][j] << " ";
-    cout << '\n';
-  }
-  cout << '\n';
-}
-// TODO: this can be made as a utility function in a separate file and included
-// in a header? How to do that? Library?
+
 void rotateMatrix(int **mat, int n) {
   for (int layer = 0; layer < n / 2; layer++) {
     for (int row = layer; row < n - layer - 1; row++) {
@@ -38,10 +30,8 @@ int main(int argc, char const *argv[]) {
     exit(EXIT_FAILURE);
   else
     n = rows;
-  mat = new int *[rows];
-  for (int i = 0; i < rows; i++) {
-    mat[i] = new int[cols];
-  }
+  
+  mat = createSqrMatrix(3);
   mat[0][0] = 1;
   mat[0][1] = 2;
   mat[0][2] = 3;
