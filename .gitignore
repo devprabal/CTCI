@@ -1,2 +1,8 @@
-.vscode/
+**/.vscode/*
+!.vscode/c_cpp_properties.json
+!.vscode/launch.json
 bin/
+build/
+*.pdf
+CTCI notes till *.md
+
